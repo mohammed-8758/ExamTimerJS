@@ -6,3 +6,11 @@ updating counter to let you know what question you should be on.
 
 Please note: This assumes that all questions have the same marks, and therefore deserve the same 
 amount of working time
+
+Installation instructions
+
+Run the following commands:
+npm install
+npm run dev
+
+Accessible via localhost:5173
