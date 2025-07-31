@@ -12,5 +12,3 @@ Installation instructions
 Run the following commands:
 npm install
 npm run dev
-
-Accessible via localhost:5173
