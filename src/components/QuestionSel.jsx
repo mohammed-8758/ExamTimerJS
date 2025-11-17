@@ -32,6 +32,7 @@ export default function QuestionSel(props) {
         className='apply-button'
         id="apply"
         variant="outlined"
+        sx={{ height: "7ch" }}
         >
             Next
         </Button>
