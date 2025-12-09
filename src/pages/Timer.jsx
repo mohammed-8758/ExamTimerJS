@@ -14,9 +14,13 @@ export default function Timer() {
     const [timePast, setTimePast] = useState(0);
     const [time, setTime] = useState(countDownTime);
     const [curQuestion, setCurQuestion] = useState(1);
+    const [isFinished, setIsFinished] = useState(false);
     
     useEffect(() => {
-      if (time <= 0) return;
+      if (time <= 0) {
+        setIsFinished(true);
+        return;
+      }
 
       const interval = setInterval(() => {
         setTimePast(curTime => curTime + 1);
@@ -26,7 +30,7 @@ export default function Timer() {
         }
         setTime(prevTime => prevTime - 1);
       }, 1000);
-
+      
       return() => clearInterval(interval);
     }, [time]);
 
@@ -36,8 +40,18 @@ export default function Timer() {
 
     return (
         <div className="Timer">
-            <h2>Time Remaining: {hours.toString().padStart(2, '0')}h {minutes.toString().padStart(2, '0')}m {seconds.toString().padStart(2, '0')}s </h2>
-            <h2>You should be up to question: {curQuestion}</h2>
+          {
+            isFinished ?
+            <>
+              <h2>Congratulations!🥳</h2>
+              <h3>Your exam is complete.</h3>
+            </>
+            :
+            <>
+              <h2>Time Remaining: {hours.toString().padStart(2, '0')}h {minutes.toString().padStart(2, '0')}m {seconds.toString().padStart(2, '0')}s </h2>
+              <h2>You should be up to question: {curQuestion}</h2>
+            </>
+          }
         </div>
     )
 }
