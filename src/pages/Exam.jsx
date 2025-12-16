@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
-export default function Timer() {
+export default function Exam() {
     const [searchParams] = useSearchParams();
     const questionNum = searchParams.get("questions");
     const timeLength = searchParams.get("time");
@@ -39,7 +39,7 @@ export default function Timer() {
     const seconds = time % 60;
 
     return (
-        <div className="Timer">
+        <div className="Exam">
           {
             isFinished ?
             <>

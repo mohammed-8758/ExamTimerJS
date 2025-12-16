@@ -20,7 +20,7 @@ export default function TimeSel(props) {
         onSubmit={(event) => {
             event.preventDefault();
             props.onSubmit(timeCount);
-            navigate(`/timer?questions=${questionNum}&time=${timeCount}`);
+            navigate(`/exam?questions=${questionNum}&time=${timeCount}`);
         }}
     >
         <TextField 
